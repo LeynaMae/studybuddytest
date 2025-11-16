@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Owl Logo</title>
+<style>
+  body {
+    background: #f3e4cf;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: system-ui, sans-serif;
+  }
+
+  /* Owl Circle */
+  .owl-logo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, #fff 0, #fff 35%, #f0d7b0 36%, #c49a6c 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  }
+
+  /* --- Cute Round Hat --- */
+  .owl-logo::before {
+    content: "";
+    position: absolute;
+    top: -28px;
+    width: 110px;
+    height: 30px;
+    background: #4a2f16;
+    border-radius: 50%;
+    box-shadow: 0 4px 0 0 #3c2412;
+  }
+
+  .owl-logo::after {
+    content: "";
+    position: absolute;
+    top: -55px;
+    width: 65px;
+    height: 35px;
+    background: #5a3b1a;
+    border-radius: 50% 50% 0 0;
+  }
+
+  /* Owl Eyes */
+  .owl-eyes {
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    position: absolute;
+    top: 40px;
+  }
+
+  .eye {
+    width: 26px;
+    height: 26px;
+    background: white;
+    border-radius: 50%;
+    position: relative;
+    box-shadow: 0 0 0 3px #3a2714;
+  }
+
+  .eye::after {
+    content: "";
+    width: 12px;
+    height: 12px;
+    background: #3a2714;
+    border-radius: 50%;
+    position: absolute;
+    top: 7px;
+    left: 7px;
+  }
+
+  /* Beak */
+  .beak {
+    width: 20px;
+    height: 20px;
+    background: #b87333;
+    position: absolute;
+    bottom: 32px;
+    clip-path: polygon(50% 100%, 0 0, 100% 0);
+  }
+</style>
+</head>
+<body>
+
+<div class="owl-logo">
+  <div class="owl-eyes">
+    <div class="eye left"></div>
+    <div class="eye right"></div>
+  </div>
+  <div class="beak"></div>
+</div>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Study Buddy - Math</title>
+  <style>
+    :root {
+      --bg: #f3e4cf;
+      --bg-light: #f8efe1;
+      --tan: #e1c8a7;
+      --tan-dark: #c49a6c;
+      --brown: #5a3b1a;
+      --brown-light: #7a5330;
+      --accent: #d8b68a;
+      --text: #3a2714;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--brown), var(--brown-light));
+      color: #fff;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .owl-logo {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, #fff 0, #fff 35%, #f0d7b0 36%, #c49a6c 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    /* Graduation cap */
+    .owl-logo::before {
+      content: "";
+      position: absolute;
+      top: -10px;
+      width: 38px;
+      height: 10px;
+      background: #222;
+      transform: perspective(40px) rotateX(25deg);
+      border-radius: 2px;
+    }
+
+    .owl-logo::after {
+      content: "";
+      position: absolute;
+      top: 0px;
+      left: 50%;
+      width: 3px;
+      height: 16px;
+      background: #222;
+      transform: translateX(-50%);
+    }
+
+    .owl-face {
+      font-size: 30px;
+      line-height: 1;
+    }
+
+    .title-block h1 {
+      font-size: 1.7rem;
+      letter-spacing: 1px;
+    }
+
+    .title-block p {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+
+    .points-display {
+      background: rgba(0,0,0,0.15);
+      border-radius: 999px;
+      padding: 0.4rem 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.95rem;
+    }
+
+    .points-display span.value {
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+
+    .points-icon {
+      font-size: 1.1rem;
+    }
+
+    nav {
+      background: var(--tan);
+      padding: 0.4rem 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+    }
+
+    nav button {
+      background: transparent;
+      border: none;
+      padding: 0.5rem 0.9rem;
+      border-radius: 999px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--brown);
+      transition: background 0.2s, transform 0.1s;
+    }
+
+    nav button.active {
+      background: var(--brown);
+      color: #fff;
+    }
+
+    nav button:hover {
+      background: var(--brown-light);
+      color: #fff;
+      transform: translateY(-1px);
+    }
+
+    main {
+      flex: 1;
+      padding: 1.5rem;
+      max-width: 1100px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .slide {
+      display: none;
+      background: var(--bg-light);
+      border-radius: 16px;
+      padding: 1.5rem;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.12);
+    }
+
+    .slide.active {
+      display: block;
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      margin-bottom: 0.8rem;
+      color: var(--brown);
+    }
+
+    p.description {
+      font-size: 0.9rem;
+      margin-bottom: 1.2rem;
+      color: #5b4630;
+    }
+
+    /* HOME SLIDE */
+    .home-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    .home-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 1rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+      margin-bottom: 0.8rem;
+    }
+
+    .home-card h3 {
+      font-size: 1rem;
+      margin-bottom: 0.3rem;
+      color: var(--brown);
+    }
+
+    .home-card p {
+      font-size: 0.85rem;
+    }
+
+    .big-owl-card {
+      background: var(--tan);
+      border-radius: 16px;
+      padding: 1.2rem;
+      text-align: center;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.4);
+    }
+
+    .big-owl {
+      font-size: 4rem;
+    }
+
+    .owl-accessories {
+      margin-top: 0.5rem;
+      font-size: 0.85rem;
+    }
+
+    /* TIMER SLIDE */
+    .timer-container {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      max-width: 400px;
+    }
+
+    .timer-display {
+      font-size: 2.2rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      padding: 0.8rem 1rem;
+      text-align: center;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .timer-controls {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .timer-controls button {
+      flex: 1;
+    }
+
+    label {
+      font-size: 0.85rem;
+      margin-bottom: 0.25rem;
+      display: block;
+    }
+
+    select, input[type="number"], input[type="text"], textarea {
+      width: 100%;
+      padding: 0.45rem 0.5rem;
+      border-radius: 8px;
+      border: 1px solid var(--tan-dark);
+      background: #fff;
+      font-size: 0.9rem;
+      margin-bottom: 0.6rem;
+    }
+
+    textarea {
+      min-height: 60px;
+      resize: vertical;
+    }
+
+    button.primary {
+      background: var(--brown);
+      color: #fff;
+      border: none;
+      padding: 0.5rem 0.9rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background 0.2s, transform 0.1s;
+    }
+
+    button.primary:hover {
+      background: var(--brown-light);
+      transform: translateY(-1px);
+    }
+
+    button.secondary {
+      background: var(--tan-dark);
+      color: #fff;
+      border: none;
+      padding: 0.5rem 0.9rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background 0.2s, transform 0.1s;
+    }
+
+    button.secondary:hover {
+      background: var(--brown);
+      transform: translateY(-1px);
+    }
+
+    .timer-note {
+      font-size: 0.8rem;
+      color: #6c5840;
+    }
+
+    /* QUIZ MAKER */
+    .quiz-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
+      gap: 1.5rem;
+    }
+
+    .quiz-section {
+      background: #fff;
+      border-radius: 12px;
+      padding: 1rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    }
+
+    .question-list {
+      max-height: 260px;
+      overflow-y: auto;
+      padding-right: 0.3rem;
+      font-size: 0.85rem;
+    }
+
+    .question-item {
+      padding: 0.4rem 0.5rem;
+      border-radius: 8px;
+      background: #f7ecd9;
+      margin-bottom: 0.4rem;
+    }
+
+    .question-item strong {
+      color: var(--brown);
+    }
+
+    .quiz-test {
+      display: none;
+    }
+
+    .quiz-test.active {
+      display: block;
+    }
+
+    .quiz-result {
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    /* SHOP */
+    .shop-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1rem;
+    }
+
+    .shop-item {
+      background: #fff;
+      border-radius: 12px;
+      padding: 0.9rem;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      font-size: 0.9rem;
+    }
+
+    .shop-item h3 {
+      font-size: 1rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .shop-price {
+      margin: 0.3rem 0 0.6rem 0;
+      font-weight: 600;
+      color: var(--brown);
+    }
+
+    .shop-icon {
+      font-size: 1.4rem;
+      margin-bottom: 0.4rem;
+    }
+
+    /* STUDY HELP */
+    .help-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+
+    .help-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 0.9rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      font-size: 0.9rem;
+    }
+
+    .help-card h3 {
+      margin-bottom: 0.3rem;
+      color: var(--brown);
+    }
+
+    ul {
+      padding-left: 1.1rem;
+      margin-top: 0.3rem;
+      font-size: 0.85rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 0.8rem;
+      font-size: 0.75rem;
+      color: #6f5a42;
+    }
+
+    @media (max-width: 800px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .home-layout {
+        grid-template-columns: 1fr;
+      }
+      .quiz-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-area">
+      <div class="owl-logo">
+        <div class="owl-face">🦉</div>
+      </div>
+      <div class="title-block">
+        <h1>Study Buddy · Math</h1>
+        <p>Earn points, upgrade your owl, and make math study time more fun.</p>
+      </div>
+    </div>
+    <div class="points-display">
+      <span class="points-icon">⭐</span>
+      Points:
+      <span class="value" id="pointsDisplay">0</span>
+    </div>
+  </header>
+
+  <nav>
+    <button class="active" data-slide="home">Home</button>
+    <button data-slide="timer">Study Timer</button>
+    <button data-slide="quiz">Quiz Maker</button>
+    <button data-slide="shop">Owl Shop</button>
+    <button data-slide="help">Study Help</button>
+  </nav>
+
+  <main>
+    <!-- HOME -->
+    <section class="slide active" id="home">
+      <h2>Welcome to Study Buddy</h2>
+      <p class="description">
+        Use the timer to study, earn points, and upgrade your owl with new accessories.
+        Create your own math quizzes and practice whenever you want.
+      </p>
+
+      <div class="home-layout">
+        <div>
+          <div class="home-card">
+            <h3>How it works</h3>
+            <p>Start a study session with the timer. When you finish, you’ll get points based on how long you studied. Use your points in the Owl Shop to unlock accessories.</p>
+          </div>
+          <div class="home-card">
+            <h3>Slides</h3>
+            <ul>
+              <li><strong>Study Timer:</strong> Track your focused time and earn points.</li>
+              <li><strong>Quiz Maker:</strong> Create custom math quizzes & test yourself.</li>
+              <li><strong>Owl Shop:</strong> Spend points on accessories.</li>
+              <li><strong>Study Help:</strong> Learn different ways to study and remember math.</li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <div class="big-owl-card">
+            <div class="big-owl" id="bigOwlDisplay">🦉</div>
+            <div class="owl-accessories" id="owlAccessoriesText">
+              No accessories yet. Earn points and visit the shop!
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TIMER -->
+    <section class="slide" id="timer">
+      <h2>Study Timer</h2>
+      <p class="description">
+        Choose how long you want to focus, start the timer, and earn points when you finish.
+      </p>
+      <div class="timer-container">
+        <div>
+          <label for="timerMinutes">Study length (minutes)</label>
+          <input type="number" id="timerMinutes" min="1" max="180" value="25" />
+        </div>
+        <div class="timer-display" id="timerDisplay">25:00</div>
+        <div class="timer-controls">
+          <button class="primary" id="startTimerBtn">Start</button>
+          <button class="secondary" id="pauseTimerBtn">Pause</button>
+          <button class="secondary" id="resetTimerBtn">Reset</button>
+        </div>
+        <p class="timer-note">
+          When the timer reaches 0, you’ll automatically earn points:
+          <strong>1 point per minute</strong> 🎉
+        </p>
+      </div>
+    </section>
+
+    <!-- QUIZ MAKER -->
+    <section class="slide" id="quiz">
+      <h2>Quiz Maker</h2>
+      <p class="description">
+        Create your own math questions, then switch to Test Mode to see how you do.
+      </p>
+
+      <div class="quiz-layout">
+        <!-- Build Questions -->
+        <div class="quiz-section">
+          <h3>Build your quiz</h3>
+          <label for="quizQuestion">Question</label>
+          <textarea id="quizQuestion" placeholder="Example: What is 7 × 8?"></textarea>
+          <label for="quizAnswer">Answer</label>
+          <input type="text" id="quizAnswer" placeholder="Example: 56" />
+          <button class="primary" id="addQuestionBtn">Add question</button>
+
+          <h3 style="margin-top: 1rem;">Questions in this quiz</h3>
+          <div class="question-list" id="questionList"></div>
+        </div>
+
+        <!-- Test Mode -->
+        <div class="quiz-section quiz-test" id="quizTestSection">
+          <h3>Test Mode</h3>
+          <p id="currentQuestionText">No questions yet. Add some on the left!</p>
+          <input type="text" id="userAnswer" placeholder="Type your answer here" />
+          <button class="primary" id="submitAnswerBtn">Submit answer</button>
+          <button class="secondary" id="nextQuestionBtn" style="margin-top:0.4rem;">Next question</button>
+          <div class="quiz-result" id="quizResultText"></div>
+          <p class="timer-note" style="margin-top: 0.5rem;">
+            Correct answers give you <strong>5 points</strong> ⭐
+          </p>
+        </div>
+      </div>
+      <button class="secondary" id="toggleTestModeBtn" style="margin-top:1rem;">
+        Start Test Mode
+      </button>
+    </section>
+
+    <!-- SHOP -->
+    <section class="slide" id="shop">
+      <h2>Owl Shop</h2>
+      <p class="description">
+        Spend your points to upgrade your owl. Each accessory will appear on your owl and in your Home slide.
+      </p>
+      <div class="shop-grid">
+        <div class="shop-item">
+          <div class="shop-icon">🎓</div>
+          <h3>Fancy Graduation Cap</h3>
+          <div class="shop-price">Cost: 40 points</div>
+          <p>Upgrade your owl’s cap to show you’re getting serious.</p>
+          <button class="primary shop-buy" data-item="cap" data-cost="40">Buy</button>
+        </div>
+        <div class="shop-item">
+          <div class="shop-icon">👓</div>
+          <h3>Smart Glasses</h3>
+          <div class="shop-price">Cost: 35 points</div>
+          <p>Perfect for late-night study sessions and big exams.</p>
+          <button class="primary shop-buy" data-item="glasses" data-cost="35">Buy</button>
+        </div>
+        <div class="shop-item">
+          <div class="shop-icon">🧣</div>
+          <h3>Cozy Scarf</h3>
+          <div class="shop-price">Cost: 25 points</div>
+          <p>Keep your owl warm while you crush practice problems.</p>
+          <button class="primary shop-buy" data-item="scarf" data-cost="25">Buy</button>
+        </div>
+      </div>
+      <p class="timer-note" style="margin-top:1rem;">
+        Tip: Check the total points at the top of the page before buying.
+      </p>
+    </section>
+
+    <!-- STUDY HELP -->
+    <section class="slide" id="help">
+      <h2>Study Help Methods</h2>
+      <p class="description">
+        Try different ways to study math. Mix them together and see what works best for you.
+      </p>
+
+      <div class="help-grid">
+        <div class="help-card">
+          <h3>1. Spaced Practice</h3>
+          <p>Study a little every day instead of all at once.</p>
+          <ul>
+            <li>Use the timer for 20–30 minutes.</li>
+            <li>Review old problems before new ones.</li>
+            <li>Repeat topics every few days.</li>
+          </ul>
+        </div>
+        <div class="help-card">
+          <h3>2. Active Recall</h3>
+          <p>Test yourself instead of just re-reading notes.</p>
+          <ul>
+            <li>Use the Quiz Maker to create questions.</li>
+            <li>Cover up answers and try to remember them.</li>
+            <li>Explain a problem out loud like a teacher.</li>
+          </ul>
+        </div>
+        <div class="help-card">
+          <h3>3. Break Down Problems</h3>
+          <p>Split big problems into smaller steps.</p>
+          <ul>
+            <li>Underline important numbers and words.</li>
+            <li>Write down each step in order.</li>
+            <li>Check each step before moving on.</li>
+          </ul>
+        </div>
+        <div class="help-card">
+          <h3>4. Mix it Up</h3>
+          <p>Practice different problem types in the same session.</p>
+          <ul>
+            <li>Do a few fractions, then some geometry, then word problems.</li>
+            <li>Shuffle flashcards so you don’t always know what’s next.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Study Buddy 🦉 · Make math your superpower, one study session at a time.
+  </footer>
+
+  <script>
+    // --- SLIDE NAVIGATION ---
+    const navButtons = document.querySelectorAll('nav button');
+    const slides = document.querySelectorAll('.slide');
+
+    navButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = btn.getAttribute('data-slide');
+        navButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        slides.forEach(slide => {
+          slide.classList.toggle('active', slide.id === target);
+        });
+      });
+    });
+
+    // --- POINTS SYSTEM ---
+    let points = 0;
+    const pointsDisplay = document.getElementById('pointsDisplay');
+
+    function addPoints(amount) {
+      points += amount;
+      if (points < 0) points = 0;
+      pointsDisplay.textContent = points;
+    }
+
+    // --- OWL ACCESSORIES STATE ---
+    const owlAccessories = {
+      cap: false,
+      glasses: false,
+      scarf: false
+    };
+
+    const owlAccessoriesText = document.getElementById('owlAccessoriesText');
+    const bigOwlDisplay = document.getElementById('bigOwlDisplay');
+
+    function updateOwlDisplay() {
+      const active = Object.keys(owlAccessories).filter(k => owlAccessories[k]);
+      if (active.length === 0) {
+        owlAccessoriesText.textContent = "No accessories yet. Earn points and visit the shop!";
+      } else {
+        const names = [];
+        if (owlAccessories.cap) names.push("Fancy Cap");
+        if (owlAccessories.glasses) names.push("Smart Glasses");
+        if (owlAccessories.scarf) names.push("Cozy Scarf");
+        owlAccessoriesText.textContent = "Accessories: " + names.join(", ");
+      }
+      // You could change the emoji if you want, but we'll keep 🦉 for now
+      bigOwlDisplay.textContent = "🦉";
+    }
+
+    // --- SHOP LOGIC ---
+    document.querySelectorAll('.shop-buy').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const cost = parseInt(btn.getAttribute('data-cost'), 10);
+        const item = btn.getAttribute('data-item');
+        if (points < cost) {
+          alert("Not enough points! Study a bit more with the timer or quiz.");
+          return;
+        }
+        if (owlAccessories[item]) {
+          alert("You already own this accessory!");
+          return;
+        }
+        if (confirm(`Buy this accessory for ${cost} points?`)) {
+          addPoints(-cost);
+          owlAccessories[item] = true;
+          updateOwlDisplay();
+          alert("Accessory added to your owl!");
+        }
+      });
+    });
+
+    // --- STUDY TIMER ---
+    const timerMinutesInput = document.getElementById('timerMinutes');
+    const timerDisplay = document.getElementById('timerDisplay');
+    const startTimerBtn = document.getElementById('startTimerBtn');
+    const pauseTimerBtn = document.getElementById('pauseTimerBtn');
+    const resetTimerBtn = document.getElementById('resetTimerBtn');
+
+    let timerSecondsTotal = 25 * 60;
+    let timerSecondsLeft = timerSecondsTotal;
+    let timerInterval = null;
+
+    function updateTimerDisplay() {
+      const minutes = String(Math.floor(timerSecondsLeft / 60)).padStart(2,"0");
+      const seconds = String(timerSecondsLeft % 60).padStart(2,"0");
+      timerDisplay.textContent = `${minutes}:${seconds}`;
+    }
+
+    function resetTimerFromInput() {
+      const mins = Math.max(1, Math.min(180, Number(timerMinutesInput.value) || 25));
+      timerMinutesInput.value = mins;
+      timerSecondsTotal = mins * 60;
+      timerSecondsLeft = timerSecondsTotal;
+      updateTimerDisplay();
+    }
+
+    timerMinutesInput.addEventListener('change', resetTimerFromInput);
+
+    startTimerBtn.addEventListener('click', () => {
+      if (timerInterval) return;
+      // If timer is at 0, reset it from input
+      if (timerSecondsLeft <= 0) {
+        resetTimerFromInput();
+      }
+      timerInterval = setInterval(() => {
+        timerSecondsLeft--;
+        updateTimerDisplay();
+        if (timerSecondsLeft <= 0) {
+          clearInterval(timerInterval);
+          timerInterval = null;
+          timerSecondsLeft = 0;
+          updateTimerDisplay();
+          const mins = Math.round(timerSecondsTotal / 60);
+          const earned = mins; // 1 point per minute
+          addPoints(earned);
+          alert(`Nice work! You earned ${earned} points for studying.`);
+        }
+      }, 1000);
+    });
+
+    pauseTimerBtn.addEventListener('click', () => {
+      if (timerInterval) {
+        clearInterval(timerInterval);
+        timerInterval = null;
+      }
+    });
+
+    resetTimerBtn.addEventListener('click', () => {
+      if (timerInterval) {
+        clearInterval(timerInterval);
+        timerInterval = null;
+      }
+      resetTimerFromInput();
+    });
+
+    resetTimerFromInput();
+
+    // --- QUIZ MAKER ---
+    let questions = [];
+    let currentQuestionIndex = 0;
+    let testMode = false;
+
+    const quizQuestionInput = document.getElementById('quizQuestion');
+    const quizAnswerInput = document.getElementById('quizAnswer');
+    const addQuestionBtn = document.getElementById('addQuestionBtn');
+    const questionList = document.getElementById('questionList');
+    const toggleTestModeBtn = document.getElementById('toggleTestModeBtn');
+    const quizTestSection = document.getElementById('quizTestSection');
+    const currentQuestionText = document.getElementById('currentQuestionText');
+    const userAnswerInput = document.getElementById('userAnswer');
+    const submitAnswerBtn = document.getElementById('submitAnswerBtn');
+    const nextQuestionBtn = document.getElementById('nextQuestionBtn');
+    const quizResultText = document.getElementById('quizResultText');
+
+    function renderQuestionList() {
+      questionList.innerHTML = "";
+      if (questions.length === 0) {
+        questionList.innerHTML = "<p>No questions yet. Add some above.</p>";
+        return;
+      }
+      questions.forEach((q, index) => {
+        const div = document.createElement('div');
+        div.className = "question-item";
+        div.innerHTML = `<strong>Q${index + 1}:</strong> ${q.question}<br><em>Ans:</em> ${q.answer}`;
+        questionList.appendChild(div);
+      });
+    }
+
+    function showCurrentQuestion() {
+      if (questions.length === 0) {
+        currentQuestionText.textContent = "No questions yet. Add some on the left!";
+        return;
+      }
+      const q = questions[currentQuestionIndex];
+      currentQuestionText.textContent = `Q${currentQuestionIndex + 1}: ${q.question}`;
+      userAnswerInput.value = "";
+      quizResultText.textContent = "";
+    }
+
+    addQuestionBtn.addEventListener('click', () => {
+      const q = quizQuestionInput.value.trim();
+      const a = quizAnswerInput.value.trim();
+      if (!q || !a) {
+        alert("Please type both a question and an answer.");
+        return;
+      }
+      questions.push({ question: q, answer: a });
+      quizQuestionInput.value = "";
+      quizAnswerInput.value = "";
+      renderQuestionList();
+      if (questions.length === 1 && testMode) {
+        showCurrentQuestion();
+      }
+    });
+
+    toggleTestModeBtn.addEventListener('click', () => {
+      testMode = !testMode;
+      if (testMode) {
+        quizTestSection.classList.add('active');
+        toggleTestModeBtn.textContent = "Stop Test Mode";
+        currentQuestionIndex = 0;
+        showCurrentQuestion();
+      } else {
+        quizTestSection.classList.remove('active');
+        toggleTestModeBtn.textContent = "Start Test Mode";
+      }
+    });
+
+    submitAnswerBtn.addEventListener('click', () => {
+      if (questions.length === 0) return;
+      const userAns = (userAnswerInput.value || "").trim().toLowerCase();
+      const correctAns = questions[currentQuestionIndex].answer.trim().toLowerCase();
+      if (!userAns) {
+        quizResultText.textContent = "Type an answer first!";
+        return;
+      }
+      if (userAns === correctAns) {
+        quizResultText.textContent = "✅ Correct! +5 points";
+        addPoints(5);
+      } else {
+        quizResultText.textContent = `❌ Not quite. Correct answer: ${questions[currentQuestionIndex].answer}`;
+      }
+    });
+
+    nextQuestionBtn.addEventListener('click', () => {
+      if (questions.length === 0) return;
+      currentQuestionIndex = (currentQuestionIndex + 1) % questions.length;
+      showCurrentQuestion();
+    });
+
+    // Initialize
+    renderQuestionList();
+    updateOwlDisplay();
+  </script>
+</body>
+</html>
